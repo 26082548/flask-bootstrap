@@ -1,7 +1,7 @@
 {% extends 'layout.html' %}
 
 {% block title %}
-{{title}}
+  {{title}}
 {% endblock %}
 
 {% block content %}
@@ -14,28 +14,28 @@
       </div>
       <div class="card-body">
         <form method="post">
-    <div class="mb-3">
-        <label for="brand" class="form-label">Brand</label>
-        <input name="brand" type="text" class="form-control" id="brand">
-      </div>
-      <div class="mb-3">
-          <label for="model" class="form-label">Model</label>
-          <input name="model" type="text" class="form-control" id="model">
-        </div>
-      <div class="mb-3">
-          <label for="year" class="form-label">Year</label>
-          <input name="year" type="number" class="form-control" id="year">
-        </div>
-      <div class="mb-3">
-          <label for="price" class="form-label">Price</label>
-          <input name="price" type="number" class="form-control" id="price">
-        </div>
-
-      <button type="submit" class="btn btn-outline-success">
-        <i class="bi bi-car-front-fill"></i>
-        Add New Car
-      </button>
-    </form>
+          <div class="mb-3">
+            <label for="brand" class="form-label">Brand</label>
+            <input name="brand" type="text" class="form-control" id="brand">            
+          </div>
+          <div class="mb-3">
+            <label for="model" class="form-label">Model</label>
+            <input name="model" type="text" class="form-control" id="model">            
+          </div>
+          <div class="mb-3">
+            <label for="year" class="form-label">Year</label>
+            <input name="year" type="number" class="form-control" id="year">            
+          </div>
+          <div class="mb-3">
+            <label for="price" class="form-label">Price</label>
+            <input name="price" type="number" class="form-control" id="price">            
+          </div>
+          
+          <button type="submit" class="btn btn-outline-success">
+            <i class="bi bi-car-front"></i>
+            Add New Car
+          </button>
+        </form>
       </div>
     </div>
   </div>
