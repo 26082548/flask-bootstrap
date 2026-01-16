@@ -91,7 +91,7 @@ def edit_car(id):
                          title='Edit Car Page',
                          car=car)
 
-#เพิ่มเติมการค้นหา
+##
 @app.route('/search', methods=['POST'])
 def search_cars_by_brand():
   
