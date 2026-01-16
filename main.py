@@ -1,8 +1,14 @@
+<<<<<<< HEAD
 from flask import Flask, render_template, request, redirect, url_for, flash
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = b'khiopgfdfghj;oioiouiy'
 # app.secret_key = b'khiopgfdfghj;oioiouiy'
+=======
+from flask import Flask, render_template, request, redirect, url_for
+
+app = Flask(__name__)
+>>>>>>> 71af39fccde3692cef06fd4062829399e31dba41
 
 cars = [
   {'id':1, 'brand':'Toyota', 'model':'Yaris Ativ', 'year':2024, 'price': 560000},
@@ -14,6 +20,7 @@ cars = [
 def index():
   return render_template('index.html', title='Home Page')
 
+<<<<<<< HEAD
 @app.route('/cars', methods=['GET', 'POST'])
 def show_cars():
   if request.method == 'POST':
@@ -28,6 +35,10 @@ def show_cars():
                          title='Show Cars by Brand Page',
                          cars=tmp_cars)
   
+=======
+@app.route('/cars')
+def show_cars():
+>>>>>>> 71af39fccde3692cef06fd4062829399e31dba41
   return render_template('cars/cars.html',
                          title='Show All Cars Page',
                          cars=cars)
@@ -41,6 +52,7 @@ def new_car():
     price = int(request.form['price'])
 
     length = len(cars)
+<<<<<<< HEAD
     if length != 0:
       id = cars[length-1]['id'] + 1
     else:
@@ -49,10 +61,17 @@ def new_car():
 
     cars.append(car)
     flash('Add new car successfully', 'success')
+=======
+    id = cars[length-1]['id'] + 1
+    car = {'id':id, 'brand':brand, 'model':model, 'year':year, 'price': price}
+
+    cars.append(car)
+>>>>>>> 71af39fccde3692cef06fd4062829399e31dba41
     return redirect(url_for('show_cars'))
   
   return render_template('cars/new_car.html',
                          title='New Car Page')
+<<<<<<< HEAD
 
 @app.route('/cars/<int:id>/delete')
 def delete_car(id):
@@ -106,3 +125,5 @@ def search_cars_by_brand():
     return render_template('cars/cars.html', 
                            title='Show Cars by Brand Page', 
                            cars=filtered_cars)
+=======
+>>>>>>> 71af39fccde3692cef06fd4062829399e31dba41
