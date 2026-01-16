@@ -17,12 +17,12 @@ def index():
 @app.route('/cars', methods=['GET', 'POST'])
 def show_cars():
   if request.method == 'POST':
-    brand = request.form['brand'].lower()
+    brand = request.form['brand']
     # print(brand)
     tmp_cars = []
     for car in cars:
       # print(car)
-      if brand in car['brand'].lower():
+      if brand in car['brand']:
         tmp_cars.append(car)
     return render_template('cars/cars.html',
                          title='Show Cars by Brand Page',
@@ -90,3 +90,19 @@ def edit_car(id):
   return render_template('cars/edit_car.html',
                          title='Edit Car Page',
                          car=car)
+
+@app.route('/search', methods=['POST'])
+def search_cars_by_brand():
+  
+    query = request.form.get('search', '').strip()
+    
+ 
+    filtered_cars = [
+        car for car in cars 
+        if query.lower() in car['brand'].lower()
+    ]
+    
+
+    return render_template('cars/cars.html', 
+                           title='Show Cars by Brand Page', 
+                           cars=filtered_cars)
